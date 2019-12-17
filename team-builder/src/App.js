@@ -5,12 +5,7 @@ import Form from './components/Form'
 
 function App() {
 
-  const [team, setTeam] = useState([{
-      name: "john",
-      email: "john@john.com",
-      role: "developer"
-    }
-  ])
+  const [team, setTeam] = useState([])
 
   return (
     <div className="App">

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import styled from 'styled-components'
 
 const Card = styled.div`
@@ -17,9 +17,11 @@ const CardContainer = styled.div`
 
 
 
-
 function Member(props) {
     const {newMember, team, memberToEdit, setMemberToEdit} = props;
+
+
+    
 
     return (
         <CardContainer>

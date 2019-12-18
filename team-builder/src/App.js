@@ -5,7 +5,7 @@ import Form from './components/Form'
 import Member from './components/Member'
 
 function App() {
-  const [memberToEdit, setMemberToEdit] = useState();
+  const [memberToEdit, setMemberToEdit] = useState("");
   const [team, setTeam] = useState([])
   const [newMember, setNewMember] = useState({
     name:"",
@@ -13,11 +13,11 @@ function App() {
     role:"",
 })
 
-  console.log(memberToEdit);
+  // console.log(team);
   return (
     <div className="App">      
 
-      <Form setTeam={setTeam} team={team} newMember={newMember} setNewMember={setNewMember}/>
+      <Form setTeam={setTeam} team={team} newMember={newMember} setNewMember={setNewMember} memberToEdit={memberToEdit}/>
 
       <Member newMember={newMember} team={team} membertoEdit={memberToEdit} setMemberToEdit={setMemberToEdit}/>
     </div>

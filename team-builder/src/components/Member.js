@@ -18,7 +18,7 @@ const CardContainer = styled.div`
 
 
 function Member(props) {
-    const {newMember, team, memberToEdit, setMemberToEdit} = props;
+    const {newMember, team, memberToEdit, setMemberToEdit, isEdit, setIsEdit} = props;
 
 
     
@@ -33,7 +33,8 @@ function Member(props) {
                 <p>Role: {member.role}</p>
                 <button onClick={()=>{
                     setMemberToEdit(member);
-                    // console.log(memberToEdit);
+                    setIsEdit(!isEdit);
+                    console.log(isEdit);
                 }}>Edit</button>
             </Card>
             );

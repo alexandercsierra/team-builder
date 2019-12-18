@@ -6,6 +6,7 @@ import Member from './components/Member'
 
 function App() {
   const [memberToEdit, setMemberToEdit] = useState("");
+  const [isEdit, setIsEdit] = useState(false);
   const [team, setTeam] = useState([])
   const [newMember, setNewMember] = useState({
     name:"",
@@ -17,9 +18,9 @@ function App() {
   return (
     <div className="App">      
 
-      <Form setTeam={setTeam} team={team} newMember={newMember} setNewMember={setNewMember} memberToEdit={memberToEdit}/>
+      <Form setTeam={setTeam} team={team} newMember={newMember} setNewMember={setNewMember} memberToEdit={memberToEdit} isEdit={isEdit} setIsEdit={setIsEdit}/>
 
-      <Member newMember={newMember} team={team} membertoEdit={memberToEdit} setMemberToEdit={setMemberToEdit}/>
+      <Member newMember={newMember} team={team} membertoEdit={memberToEdit} setMemberToEdit={setMemberToEdit} isEdit = {isEdit} setIsEdit={setIsEdit}/>
     </div>
   );
 }

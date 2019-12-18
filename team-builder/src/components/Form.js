@@ -15,7 +15,7 @@ const Form2 = styled.form`
 `;
 
 function Form(props) {
-    const {setTeam, team, newMember, setNewMember, memberToEdit} = props;
+    const {setTeam, team, newMember, setNewMember, memberToEdit, isEdit, setIsEdit} = props;
     
 
     function makeNewMember (e){
@@ -28,13 +28,31 @@ function Form(props) {
     const onSubmit = (e) =>{
         e.preventDefault();
         // setTeam(oldTeam => [...oldTeam, newMember]);
+        if (isEdit){
+            //search through team array
+            // console.log(memberToEdit);
+            let newArr = [...team];
+            let person = newArr.find(person => person.email === memberToEdit.email && person.name === memberToEdit.name && person.role === memberToEdit.role);
+            let index = newArr.indexOf(person);
+            console.log(index);
+            newArr[index] = newMember;
+            setTeam(newArr);
+            console.log("This is newArr", newArr);
+            console.log("setNewMember", setNewMember);
+            console.log(team);
+
+            //find team member equal to memberToEdit
+            //replace old team member with memberToEdit
+            console.log("editing");
+            setIsEdit(false);
+        } else {
         setTeam([...team, newMember]);
-        console.log(team);
+        // console.log(team);
         setNewMember({
             name: "",
             email: "",
             role: "",
-        })
+        })}
     }
 
     useEffect(()=>{

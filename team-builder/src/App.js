@@ -7,12 +7,18 @@ import Member from './components/Member'
 function App() {
   const [memberToEdit, setMemberToEdit] = useState("");
   const [isEdit, setIsEdit] = useState(false);
-  const [team, setTeam] = useState([])
+  const [team, setTeam] = useState([{
+    name: "Alex",
+    email: "alexandercsierra@gmail.com",
+    role:"Web Developer"
+  }])
   const [newMember, setNewMember] = useState({
     name:"",
     email: "",
     role:"",
-})
+}
+
+)
 
   // console.log(team);
   return (
